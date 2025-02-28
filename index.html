@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfólio - Lukas Chaves de Souza</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="imagens/png" href="/imagens/profile.png">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- Canvas para efeito Matrix em toda a página -->
+  <canvas id="matrix"></canvas>
+  
+  <div class="loader"></div>
+
+  <header>
+    <div class="logo">
+      <h1>Lukas Chaves de Souza</h1>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#experiencia">Experiência</a></li>
+        <li><a href="#certificacoes">Certificações</a></li>
+        <li><a href="#formacao">Formação</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Seção Hero (Banner com efeito Matrix) -->
+  <section id="hero" class="hero section hidden">
+    <!-- Canvas para o efeito Matrix no hero -->
+    <canvas id="heroMatrix"></canvas>
+    <div class="hero-overlay">
+      <div class="hero-content section-box">
+        <h1>Bem-vindo ao meu Portfólio</h1>
+        <p>Programando o futuro com paixão e inovação</p>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- Seção Sobre Mim com Caixa de Fundo -->
+    <section id="sobre" class="section hidden">
+      <div class="container">
+        <div class="section-box">
+          <h2>Sobre Mim</h2>
+          <div class="sobre-content">
+            <div class="profile">
+              <img src="imagens/profile.png" alt="Foto de Lukas" class="profile-photo">
+            </div>
+            <div class="sobre-text">
+              <p>Sou estudante de Engenharia da Computação e Ciência de Dados &amp; Inteligência Artificial no IBMEC, com sólida base em desenvolvimento de software e hardware. Tenho experiência em Python para projetos de reconhecimento facial e em C/C++ para sistemas embarcados, integrando IoT e visão computacional. Procuro constantemente me atualizar e aprimorar minhas habilidades, conforme demonstrado nas certificações e projetos desenvolvidos ao longo da minha formação.</p>
+              <div class="links">
+                <a href="https://github.com/lukasdsouza" target="_blank">GitHub</a>
+                <a href="https://www.linkedin.com/in/lukas-souza01" target="_blank">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Projetos com Caixa de Fundo -->
+    <section id="projetos" class="section hidden">
+      <div class="container">
+        <div class="section-box">
+          <h2>Projetos</h2>
+          <div class="projetos-grid">
+            <!-- Projeto Reconhecimento Facial -->
+            <div class="projeto card">
+              <h3>Reconhecimento Facial</h3>
+              <p>Projeto de reconhecimento de emoções por meio da ruborização facial, desenvolvido em Python. Utiliza OpenCV e técnicas de machine learning para identificar expressões e analisar sentimentos.</p>
+              <p><strong>Linguagens:</strong> Python</p>
+              <p><strong>Tecnologias:</strong> OpenCV, Machine Learning, (possível uso de TensorFlow/Keras)</p>
+              <a href="https://github.com/mariaclaudiafreitas/Projeto-Reconhecimento-do-comportamento-humano" target="_blank">Ver no GitHub</a>
+            </div>
+            <!-- Projeto Lixeira Inteligente -->
+            <div class="projeto card">
+              <h3>Lixeira Inteligente</h3>
+              <p>Sistema de lixeira inteligente que utiliza sensores de presença e temperatura para monitorar o nível de resíduos e otimizar a coleta. Programado em C/C++ para Arduino e integrado com soluções IoT.</p>
+              <p><strong>Linguagens:</strong> C/C++</p>
+              <p><strong>Tecnologias:</strong> Arduino, Sensores, IoT</p>
+              <a href="https://github.com/Acamaz48/Project-Lixeira-Inteligente-" target="_blank">Ver no GitHub</a>
+            </div>
+            <!-- Projeto Rent a Friend -->
+            <div class="projeto card">
+              <h3>Rent a Friend</h3>
+              <p>Aplicação web full‑stack para conectar pessoas em busca de companhia para eventos, viagens ou atividades sociais. Desenvolvida com um back‑end em Node.js/Express e front‑end responsivo com HTML, CSS e JavaScript.</p>
+              <p><strong>Linguagens:</strong> HTML, CSS, JavaScript</p>
+              <p><strong>Tecnologias:</strong> Node.js, Express, (possível uso de React)</p>
+              <a href="https://github.com/lukasdsouza/projeto_rent_a_friend" target="_blank">Ver no GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Habilidades com Caixa de Fundo -->
+    <section id="habilidades" class="section hidden">
+      <div class="container">
+        <div class="section-box">
+          <h2>Habilidades</h2>
+          <div class="habilidades-list">
+            <li>Python (Análise de Dados, Machine Learning, OpenCV)</li>
+            <li>C/C++ (Programação Orientada a Objetos, Sistemas Embarcados)</li>
+            <li>IoT &amp; Visão Computacional</li>
+            <li>Desenvolvimento Web (HTML, CSS, JavaScript, Node.js)</li>
+            <li>Docker, Git, Webpack</li>
+            <li>Redes &amp; Segurança (Cisco Certified)</li>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Experiência Profissional com Caixa de Fundo -->
+    <section id="experiencia" class="section hidden">
+      <div class="container">
+        <div class="section-box">
+          <h2>Experiência</h2>
+          <div class="experiencia-item">
+            <h3>Universidade Veiga de Almeida – Estagiário de Suporte Técnico</h3>
+            <p><em>Maio/2023 a Agosto/2023</em></p>
+            <p>Atuei no suporte técnico, realizando manutenção e configuração de equipamentos e softwares. Desenvolvi dashboards que facilitaram a tomada de decisão da gerência e contribuí para a melhoria do ambiente tecnológico da instituição.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Certificações com Carrossel Infinito (Caixa de Fundo) -->
+    <section id="certificacoes" class="section hidden">
+      <div class="container">
+        <div class="section-box">
+          <h2>Certificações</h2>
+          <div class="carousel">
+            <div class="carousel-container">
+              <!-- Cada box de certificação -->
+              <div class="carousel-item">
+                <p><strong>Docker Fundamentals – Udemy (Jul/2024):</strong></p>
+                <p>Curso introdutório ao Docker, com foco na criação e gerenciamento de containers.</p>
+              </div>
+              <div class="carousel-item">
+                <p><strong>Git and GitHub – Udemy (Jul/2024):</strong></p>
+                <p>Capacitação em controle de versões e gerenciamento de repositórios colaborativos.</p>
+              </div>
+              <div class="carousel-item">
+                <p><strong>DevOps Introduction – Udemy (Jun/2024):</strong></p>
+                <p>Introdução aos princípios DevOps, com ênfase em integração e entrega contínua (CI/CD).</p>
+              </div>
+              <div class="carousel-item">
+                <p><strong>Webpack Fundamentals – Udemy (Jul/2024):</strong></p>
+                <p>Otimização e configuração de bundlers para aplicações web.</p>
+              </div>
+              <div class="carousel-item">
+                <p><strong>Scrum: Agility in Your Project – Alura (Set/2022):</strong></p>
+                <p>Treinamento em metodologias ágeis com foco no framework Scrum.</p>
+              </div>
+              <div class="carousel-item">
+                <p><strong>IBM Technical Regional Exchange – IBMEC (Out/2023):</strong></p>
+                <p>Participação em eventos técnicos e workshops para troca de conhecimentos.</p>
+              </div>
+              <div class="carousel-item">
+                <p><strong>Hackathon Tech_Hubs+=Green – IBMEC (Jun/2024):</strong></p>
+                <p>Competição de inovação focada em soluções tecnológicas e sustentáveis.</p>
+              </div>
+              <div class="carousel-item">
+                <p><strong>Intermediário em Desenvolvimento Back-end – IBMEC (Previsão Dez/2024):</strong></p>
+                <p>Curso voltado para a criação de aplicações robustas no lado do servidor.</p>
+              </div>
+              <div class="carousel-item">
+                <p><strong>Intermediário em Desenvolvimento Front-end – IBMEC (Previsão Dez/2024):</strong></p>
+                <p>Capacitação em design responsivo e interfaces web interativas.</p>
+              </div>
+              <div class="carousel-item">
+                <p><strong>Intermediário em Sistemas Embarcados – IBMEC (Previsão Dez/2024):</strong></p>
+                <p>Treinamento em programação de microcontroladores e integração com hardware.</p>
+              </div>
+              <div class="carousel-item">
+                <p><strong>Introduction to Cybersecurity – Cisco (Fev/2025):</strong></p>
+                <p>Fundamentos de segurança cibernética e técnicas de proteção contra ameaças.</p>
+              </div>
+              <div class="carousel-item">
+                <p><strong>Networking Basics – Cisco (Fev/2025):</strong></p>
+                <p>Introdução à configuração e gerenciamento de redes de computadores.</p>
+              </div>
+              <div class="carousel-item">
+                <p><strong>Orientação a Objetos em C++ – Alura (Fev/2025):</strong></p>
+                <p>Aprofundamento em programação orientada a objetos com C++.</p>
+              </div>
+            </div>
+            <button class="carousel-prev">&#10094;</button>
+            <button class="carousel-next">&#10095;</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Formação Acadêmica com Caixa de Fundo -->
+    <section id="formacao" class="section hidden">
+      <div class="container">
+        <div class="section-box">
+          <h2>Formação Acadêmica</h2>
+          <ul class="formacao-list">
+            <li>
+              <strong>IBMEC – Engenharia da Computação</strong>
+              <br><em>Previsão de conclusão: Dez/2025 (7º período)</em>
+            </li>
+            <li>
+              <strong>IBMEC – Ciência de Dados e Inteligência Artificial</strong>
+              <br><em>Previsão de conclusão: Dez/2026 (5º período)</em>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Contato com Caixa de Fundo -->
+    <section id="contato" class="section hidden">
+      <div class="container">
+        <div class="section-box">
+          <h2>Contato</h2>
+          <p>E-mail: <a href="mailto:lukascsouza1@gmail.com" id="email">lukascsouza1@gmail.com</a></p>
+          <p>Localização: Jacarepaguá, RJ</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Lukas Chaves de Souza. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Botão de Voltar ao Topo -->
+  <button id="backToTop">Topo</button>
+</body>
+</html>

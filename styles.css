@@ -1,0 +1,405 @@
+/* Fundo da página com gradiente azul estiloso */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  color: #ffffff;
+  line-height: 1.6;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Scroll suave para âncoras e compensação do header fixo */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Canvas para efeito Matrix cobrindo toda a página */
+#matrix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background: transparent;
+}
+
+/* Cabeçalho */
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(67, 67, 67, 0.8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  z-index: 100;
+}
+
+header .logo h1 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Navegação */
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-left: 30px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #66fcf1;
+}
+
+/* Menu Toggle para Mobile */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #ffffff;
+  margin: 4px 0;
+  transition: all 0.3s;
+}
+
+/* Seção Hero (Banner com efeito Matrix) */
+.hero {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+#heroMatrix {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.hero-content p {
+  font-size: 24px;
+  color: #ffffff;
+}
+
+/* Seções e Containers */
+.section {
+  padding: 100px 20px 60px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Caixa de fundo para as seções */
+.section-box {
+  background: rgba(67, 67, 67, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Títulos e parágrafos */
+h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Links de redes e projetos */
+.links a,
+.projeto.card a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.links a:hover,
+.projeto.card a:hover {
+  color: #66fcf1;
+}
+
+/* Cards de Projetos */
+.projetos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Seção Sobre - Foto e Texto */
+.sobre-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #66fcf1;
+}
+
+.sobre-text {
+  flex: 1;
+}
+
+/* Listas de Certificações e Formação */
+.certificacoes-list,
+.formacao-list {
+  list-style: none;
+  margin-top: 20px;
+  padding-left: 20px;
+}
+
+.certificacoes-list li,
+.formacao-list li {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Carrossel de Certificações (infinito, 3 itens por vez, com padding de 20px) */
+.carousel {
+  position: relative;
+  overflow: hidden;
+  margin: 20px auto;
+  max-width: 100%;
+}
+
+.carousel-container {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+  flex: 0 0 calc(33.33% - 10px);
+  margin: 0 5px;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: rgb(38, 38, 38);
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.carousel-prev,
+.carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0);
+  border: none;
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.carousel-prev {
+  left: 10px;
+}
+
+.carousel-next {
+  right: 10px;
+}
+
+/* Seção Experiência */
+.experiencia-item {
+  margin-bottom: 20px;
+}
+
+.experiencia-item h3 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+/* Rodapé */
+footer {
+  background: rgba(67, 67, 67, 0.8);
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+/* Botão de Voltar ao Topo */
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(35, 35, 35, 0.885);
+  color: #ffffff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: none;
+  z-index: 101;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header {
+    padding: 15px 20px;
+  }
+  
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: rgb(21, 21, 21);
+    width: 200px;
+    border-radius: 5px;
+  }
+  
+  .nav-links.active {
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin: 15px 0;
+    text-align: center;
+  }
+  
+  .menu-toggle {
+    display: flex;
+  }
+  
+  .sobre-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+/* Responsividade para telefones */
+@media (max-width: 480px) {
+
+  .section-box{
+    border-radius: 20px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+  
+  p,
+  .habilidades-list li,
+  .certificacoes-list li,
+  .formacao-list li {
+    font-size: 16px;
+  }
+  
+  /* Carrossel: exibe um item por vez */
+  .carousel-item {
+    flex: 0 0 calc(100% - 10px);
+  }
+  
+  header .logo h1 {
+    font-size: 20px;
+  }
+}
+
+/* Responsividade para tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+  .carousel-item {
+    flex: 0 0 calc(50% - 10px); /* Exibe dois itens por vez */
+  }
+  
+  header .logo h1 {
+    font-size: 22px;
+  }
+}
+
+
+#email{
+  color: white;
+}
